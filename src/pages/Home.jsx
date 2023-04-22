@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import Sidenav from "../sidenav";
+import { Box } from "@mui/system";
 
-function home() {
-    return (
-        <div>
-            Home
-        </div>
-    );
+function Home() {
+  return (
+    <>
+      <Box sx={{ display: "flex" }}>
+        <Sidenav />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <div>Home</div>
+        </Box>
+      </Box>
+    </>
+  );
 }
 
-export default home;
+export default Home;
