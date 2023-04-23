@@ -1,21 +1,21 @@
 import React from "react";
-import Sidenav from "../components/sidenav";
-import Navbar from "../components/navbar";
+import Sidenavdoc from "../../components/sidenavdoc";
+import Navbar from "../../components/navbar";
 import { Box } from "@mui/system";
 
-function Home() {
+function DocBoard() {
   return (
     <>
       <Navbar />
       <Box height={60} />
       <Box sx={{ display: "flex" }}>
-        <Sidenav />
+        <Sidenavdoc />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div>Home</div>
+          <div>DocHome</div>
         </Box>
       </Box>
     </>
   );
 }
 
-export default Home;
+export default DocBoard;
