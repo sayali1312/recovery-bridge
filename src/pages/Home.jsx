@@ -1,19 +1,21 @@
 import React from "react";
-import Sidenav from "../components/sidenav";
-import Navbar from "../components/navbar";
+import NavbarHome from "../components/navbarhome";
 import { Box } from "@mui/system";
+import Image from "../media/hero.jpg";
 
 function Home() {
   return (
     <>
-      <Navbar />
-      <Box height={60} />
-      <Box sx={{ display: "flex" }}>
-        <Sidenav />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div>Home</div>
-        </Box>
-      </Box>
+      <NavbarHome />
+      <Box
+        class="candles"
+        style={{
+          backgroundImage: `url(${Image})`,
+          backgroundSize: "cover",
+          height: "100vh",
+          color: "#f5f5f5",
+        }}
+      ></Box>
     </>
   );
 }
