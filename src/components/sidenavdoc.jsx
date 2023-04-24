@@ -87,7 +87,7 @@ export default function Sidenavdoc() {
 
         <Divider />
         <List>
-          <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/")}}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/patientinformation")}}>
             <ListItemButton
               sx={{
                 minHeight: 48,
@@ -104,10 +104,9 @@ export default function Sidenavdoc() {
               >
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Patient Information" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          
           <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/settings")}}>
             <ListItemButton
               sx={{

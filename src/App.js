@@ -1,8 +1,16 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home"
-import Setting from "./pages/Settings"
-import About from "./pages/About"
-import DocBoard from "./pages/doctor/docBoard";
+import Home from "./pages/home"
+import Settings from "./pages/settings"
+import About from "./pages/about"
+import DoctorSearch from "./pages/doctor/doctorSearch";
+import PatientInformation from "./pages/patient/patientInformation";
+import PatientHistory from "./pages/patient/patientHistory";
+import PatientMedication from "./pages/patient/patientMedication";
+import PatientPrediction from "./pages/patient/patientPrediction";
+import PatienTest from "./pages/patient/patientTest";
+import PatientVitals from "./pages/patient/patientVitals";
+import Login from "./pages/login";
+import SignUp from "./pages/signup";
 
 function App() {
   return <>
@@ -10,8 +18,23 @@ function App() {
       <Routes>
         <Route path="/" exact element = {<Home />}></Route>
         <Route path="/about" exact element = {<About />}></Route>
-        <Route path="/settings" exact element = {<Setting />}></Route>
-        <Route path="/docboard" exact element = {<DocBoard />}></Route>
+        <Route path="/settings" exact element = {<Settings />}></Route>
+
+        <Route path="/login" exact element = {<Login />}></Route>
+        <Route path="/signup" exact element = {<SignUp />}></Route>
+
+
+        {/* Doctor Routes */}
+        <Route path="/doctorsearch" exact element = {<DoctorSearch />}></Route>
+        
+        {/* Patient Routes */}
+        <Route path="/patientinformation" exact element = {<PatientInformation />}></Route>
+        <Route path="/patienthistory" exact element = {<PatientHistory />}></Route>
+        <Route path="/patientmedication" exact element = {<PatientMedication />}></Route>
+        <Route path="/patientprediction" exact element = {<PatientPrediction />}></Route>
+        <Route path="/patienttest" exact element = {<PatienTest />}></Route>
+        <Route path="/patientvitals" exact element = {<PatientVitals />}></Route>
+
       </Routes>
     </BrowserRouter>
   </>

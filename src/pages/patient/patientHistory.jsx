@@ -1,9 +1,9 @@
 import React from "react";
-import Sidenav from "../components/sidenav";
+import Sidenav from "../../components/sidenav";
+import Navbar from "../../components/navbar";
 import { Box } from "@mui/system";
-import Navbar from "../components/navbar";
 
-function Settings() {
+function PatientHistory() {
   return (
     <>
       <Navbar />
@@ -11,11 +11,11 @@ function Settings() {
       <Box sx={{ display: "flex" }}>
         <Sidenav />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div>Setting</div>
+          <div>Patient History</div>
         </Box>
       </Box>
     </>
   );
 }
 
-export default Settings;
+export default PatientHistory;

@@ -3,7 +3,7 @@ import Sidenavdoc from "../../components/sidenavdoc";
 import Navbar from "../../components/navbar";
 import { Box } from "@mui/system";
 
-function DocBoard() {
+function DoctorSearch() {
   return (
     <>
       <Navbar />
@@ -11,11 +11,11 @@ function DocBoard() {
       <Box sx={{ display: "flex" }}>
         <Sidenavdoc />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div>DocHome</div>
+          <div>Doctor Search</div>
         </Box>
       </Box>
     </>
   );
 }
 
-export default DocBoard;
+export default DoctorSearch;
