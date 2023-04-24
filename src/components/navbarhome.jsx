@@ -4,13 +4,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
+import { useNavigate } from "react-router-dom";
 
 export default function NavbarHome() {
+  const navigate = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-        < Box sx={{ flexGrow: 0.01 }} />
+          <SupervisedUserCircleIcon sx={{ fontSize: 40 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Typography
             variant="h5"
             noWrap
@@ -19,7 +23,7 @@ export default function NavbarHome() {
           >
             Recovery Bridge
           </Typography>
-          < Box sx={{ flexGrow: 0.02 }} />
+          <Box sx={{ flexGrow: 0.03 }} />
           <Button
             type="text"
             variant="text"
@@ -28,7 +32,7 @@ export default function NavbarHome() {
           >
             About
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Button
             type="text"
             variant="text"
@@ -37,7 +41,7 @@ export default function NavbarHome() {
           >
             Contact
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Button
             type="text"
             variant="text"
@@ -46,7 +50,7 @@ export default function NavbarHome() {
           >
             Chat
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Button
             type="text"
             variant="text"
@@ -55,7 +59,7 @@ export default function NavbarHome() {
           >
             Help
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Box sx={{ flexGrow: 1 }} />
           <Button
             type="submit"
@@ -64,10 +68,13 @@ export default function NavbarHome() {
             color="inherit"
             sx={{ mt: 2, mb: 2 }}
             size="large"
+            onClick={() => {
+                navigate("/signin");
+              }}
           >
             Sign In
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
           <Button
             type="submit"
             //fullWidth
@@ -75,10 +82,13 @@ export default function NavbarHome() {
             color="inherit"
             sx={{ mt: 2, mb: 2 }}
             size="large"
+            onClick={() => {
+              navigate("/signup");
+            }}
           >
             Sign Up
           </Button>
-          < Box sx={{ flexGrow: 0.01 }} />
+          <Box sx={{ flexGrow: 0.01 }} />
         </Toolbar>
       </AppBar>
     </Box>

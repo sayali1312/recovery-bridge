@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./pages/home"
+import Home from "./pages/home";
 import Settings from "./pages/settings"
 import About from "./pages/about"
 import DoctorSearch from "./pages/doctor/doctorSearch";
@@ -9,7 +9,7 @@ import PatientMedication from "./pages/patient/patientMedication";
 import PatientPrediction from "./pages/patient/patientPrediction";
 import PatienTest from "./pages/patient/patientTest";
 import PatientVitals from "./pages/patient/patientVitals";
-import Login from "./pages/login";
+import SignIn from "./pages/signin";  
 import SignUp from "./pages/signup";
 
 function App() {
@@ -20,8 +20,10 @@ function App() {
         <Route path="/about" exact element = {<About />}></Route>
         <Route path="/settings" exact element = {<Settings />}></Route>
 
-        <Route path="/login" exact element = {<Login />}></Route>
+        {/* Login and Signup Routes */}
+        <Route path="/signin" exact element = {<SignIn />}></Route>
         <Route path="/signup" exact element = {<SignUp />}></Route>
+        
 
 
         {/* Doctor Routes */}
