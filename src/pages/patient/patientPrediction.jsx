@@ -26,8 +26,10 @@ function PatientPrediction() {
       discharge: "",
       treatment: "",
     },
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
-  //console.log(formik.values)
 
   return (
     <>
@@ -35,207 +37,209 @@ function PatientPrediction() {
       <Box height={60} />
       <Box sx={{ display: "flex" }}>
         <Sidenav />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <div>Patient Prediction</div>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="name"
-              label="Full Name"
-              type="text"
-              fullWidth
-              value={formik.values.name}
-              onChange={formik.handleChange}
-            />
+        <form onSubmit={formik.handleSubmit}>
+          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <div>Patient Prediction</div>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="name"
+                label="Full Name"
+                type="text"
+                fullWidth
+                value={formik.values.name}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="patientid"
+                label="Patient ID"
+                fullWidth
+                value={formik.values.patientid}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="age"
+                label="Age at admission"
+                type="number"
+                fullWidth
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                value={formik.values.age}
+                onChange={formik.handleChange}
+              />{" "}
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="substance"
+                label="Substance use type"
+                type="text"
+                fullWidth
+                value={formik.values.substance}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="alcohol"
+                label="Alcohol reported"
+                type="text"
+                fullWidth
+                value={formik.values.alcohol}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="amphetamines"
+                label="Amphetamines reported"
+                type="text"
+                fullWidth
+                value={formik.values.amphetamines}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="justice"
+                label="Criminal justice referral"
+                type="text"
+                fullWidth
+                value={formik.values.justice}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="dsm"
+                label="DSM diagnosis"
+                type="text"
+                fullWidth
+                value={formik.values.dsm}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="empadmission"
+                label="Employemnt status at admission"
+                type="text"
+                fullWidth
+                value={formik.values.empadmission}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="empdischarge"
+                label="Employemnt status at discharge"
+                type="text"
+                fullWidth
+                value={formik.values.empdischarge}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="frequency"
+                label="Frequency of use at admission"
+                type="text"
+                fullWidth
+                value={formik.values.frequency}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="lengthstay"
+                label="Length of stay in treatment"
+                type="number"
+                fullWidth="true"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                value={formik.values.lengthstay}
+                onChange={formik.handleChange}
+              />{" "}
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="marijuana"
+                label="Marijuana/hashish reported"
+                type="text"
+                fullWidth
+                value={formik.values.marijuana}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="methadone"
+                label="Non-rx methadone reported"
+                type="text"
+                fullWidth
+                value={formik.values.methadone}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="other"
+                label="Other opiates/synthetics reported"
+                type="text"
+                fullWidth
+                value={formik.values.other}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="discharge"
+                label="Reason for discharge"
+                type="text"
+                fullWidth
+                value={formik.values.discharge}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <TextField
+                id="treatment"
+                label="Type of treatment service"
+                type="text"
+                fullWidth
+                value={formik.values.treatment}
+                onChange={formik.handleChange}
+              />
+            </Box>
+            <Box height={30} />
+            <Box width={500}>
+              <Button type="submit" variant="contained" size="large" fullWidth>
+                Predict
+              </Button>
+            </Box>
           </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="patientid"
-              label="Patient ID"
-              fullWidth
-              value={formik.values.patientid}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="age"
-              label="Age at admission"
-              type="number"
-              fullWidth
-              InputLabelProps={{
-                shrink: true,
-              }}
-              value={formik.values.age}
-              onChange={formik.handleChange}
-            />{" "}
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="substance"
-              label="Substance use type"
-              type="text"
-              fullWidth
-              value={formik.values.substance}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="alcohol"
-              label="Alcohol reported"
-              type="text"
-              fullWidth
-              value={formik.values.alcohol}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="amphetamines"
-              label="Amphetamines reported"
-              type="text"
-              fullWidth
-              value={formik.values.amphetamines}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="justice"
-              label="Criminal justice referral"
-              type="text"
-              fullWidth
-              value={formik.values.justice}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="dsm"
-              label="DSM diagnosis"
-              type="text"
-              fullWidth
-              value={formik.values.dsm}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="empadmission"
-              label="Employemnt status at admission"
-              type="text"
-              fullWidth
-              value={formik.values.empadmission}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="empdischarge"
-              label="Employemnt status at discharge"
-              type="text"
-              fullWidth
-              value={formik.values.empdischarge}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="frequency"
-              label="Frequency of use at admission"
-              type="text"
-              fullWidth
-              value={formik.values.frequency}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="lengthstay"
-              label="Length of stay in treatment"
-              type="number"
-              fullWidth="true"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              value={formik.values.lengthstay}
-              onChange={formik.handleChange}
-            />{" "}
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="marijuana"
-              label="Marijuana/hashish reported"
-              type="text"
-              fullWidth
-              value={formik.values.marijuana}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="methadone"
-              label="Non-rx methadone reported"
-              type="text"
-              fullWidth
-              value={formik.values.methadone}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="other"
-              label="Other opiates/synthetics reported"
-              type="text"
-              fullWidth
-              value={formik.values.other}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="discharge"
-              label="Reason for discharge"
-              type="text"
-              fullWidth
-              value={formik.values.discharge}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <TextField
-              id="treatment"
-              label="Type of treatment service"
-              type="text"
-              fullWidth
-              value={formik.values.treatment}
-              onChange={formik.handleChange}
-            />
-          </Box>
-          <Box height={30} />
-          <Box width={500}>
-            <Button variant="contained" size="large" fullWidth>
-              Predict
-            </Button>
-          </Box>
-        </Box>
+        </form>
       </Box>
     </>
   );
