@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import DoctorPatient from '../components/doctorpatient';
 
 function Copyright(props) {
   return (
@@ -79,6 +80,7 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
+            <DoctorPatient />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
