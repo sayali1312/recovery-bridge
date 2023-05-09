@@ -1,4 +1,5 @@
 import * as React from "react";
+import { usestate, useContext } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import DoctorPatient from "../components/doctorpatient";
 import UserPool from "../UserPool";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
+import { AccountContext } from "../account";
 
 function Copyright(props) {
   return (
@@ -39,8 +41,18 @@ const theme = createTheme();
 
 export default function SignInAuthentication() {
   const navigate = useNavigate();
+  const { authenticate } = useContext(AccountContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    authenticate(data.get("email"), data.get("password")).then((data) => {
+      console.log("Logged in!", data);
+      navigate("/doctorsearch", { replace: true });
+    }).catch ((err) => {
+      console.error("Failed to login!", err);
+    });
+    /*
     const data = new FormData(event.currentTarget);
 
     const user = new CognitoUser({
@@ -63,7 +75,7 @@ export default function SignInAuthentication() {
         console.log("newPasswordRequired:", data);
       },
     });
-    /*
+    
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -125,9 +137,10 @@ export default function SignInAuthentication() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={() => {
+              /*onClick={() => {
                 navigate("/doctorsearch");
               }}
+              */
             >
               Sign In
             </Button>

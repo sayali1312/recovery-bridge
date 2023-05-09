@@ -13,10 +13,11 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import SignUpAuthentication from "./pages/signupauth";
 import SignInAuthentication from "./pages/signinauth";
+import { Account } from "./account";
 
 function App() {
   return <>
-  
+    <Account>
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element = {<Home />}></Route>
@@ -42,6 +43,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </Account>
   </>
 }
 
