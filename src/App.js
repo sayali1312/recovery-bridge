@@ -11,9 +11,12 @@ import PatienTest from "./pages/patient/patientTest";
 import PatientVitals from "./pages/patient/patientVitals";
 import SignIn from "./pages/signin";  
 import SignUp from "./pages/signup";
+import SignUpAuthentication from "./pages/signupauth";
+import SignInAuthentication from "./pages/signinauth";
 
 function App() {
   return <>
+  
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element = {<Home />}></Route>
@@ -21,8 +24,8 @@ function App() {
         <Route path="/settings" exact element = {<Settings />}></Route>
 
         {/* Login and Signup Routes */}
-        <Route path="/signin" exact element = {<SignIn />}></Route>
-        <Route path="/signup" exact element = {<SignUp />}></Route>
+        <Route path="/signin" exact element = {<SignInAuthentication />}></Route>
+        <Route path="/signup" exact element = {<SignUpAuthentication />}></Route>
         
 
 
